@@ -5,6 +5,10 @@
 build:
 	go build -v ./cmd/apiserver
 
+.PHONY: test
+test:
+	go test -v -race -timeout 30s ./...
+
 # Цель по умолчанию при вызове make без аргументов
 .DEFAULT_GOAL := build
 
