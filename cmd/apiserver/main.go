@@ -1,7 +1,14 @@
 package main
 
-import "fmt"
+import (
+	"go_api/internal/app/apiserver"
+	"log"
+)
 
 func main() {
-	fmt.Println("hi")
+	s := apiserver.New()
+
+	if err := s.Start(); err != nil {
+		log.Fatal(err)
+	}
 }
